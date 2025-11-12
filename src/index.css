@@ -1,0 +1,109 @@
+:root {
+  /* Theme variables - change these to customize global colors */
+  --bg-color: #f7f7f7; /* page background */
+  --primary-color: #4f46e5; /* primary accent / buttons */
+  --card-bg: #ffffff; /* card or form background */
+  --border-color: #e5e7eb; /* neutral border color */
+  --text-color: #111827;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Helpful utility classes to customize layout and appearance */
+.page-container {
+  /* Change padding, background and borders for auth pages */
+  padding: 40px 20px;
+}
+
+/* Centering and spacing helpers for page container */
+.page-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.auth-form {
+  /* Style the auth form: background, padding, border radius, border */
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  display: inline-block;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.auth-input {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.auth-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.app-container {
+  /* Main app container for Home page */
+  background: transparent;
+  padding: 20px;
+}
+
+.section-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.list-item {
+  border-bottom: 1px dashed var(--border-color);
+  padding: 8px 0;
+}
+
+.mt-10 { margin-top: 10px; }
+.ml-8 { margin-left: 8px; }
+.center-block { display: block; margin-left: auto; margin-right: auto; }
+
+/* Header styles */
+.site-header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+.site-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 20px;
+}
+.logo-img {
+  height: 36px;
+  display: inline-block;
+}
+.site-nav a {
+  margin-left: 12px;
+  color: var(--text-color);
+}

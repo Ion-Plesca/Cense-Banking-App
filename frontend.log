@@ -1,0 +1,602 @@
+
+> frontend@0.1.0 start
+> react-scripts start
+
+(node:34514) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:34514) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Failed to compile.
+
+Module not found: Error: Can't resolve '/images/background.jpg' in '/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/src/styles'
+ERROR in ./src/styles/login.css (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/styles/login.css) 5:36-86
+Module not found: Error: Can't resolve '/images/background.jpg' in '/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/src/styles'
+
+webpack compiled with 1 error
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/pages/LoginPage.js
+Syntax error: Unexpected token, expected "}" (35:6) (35:6)
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+ERROR in ./src/pages/LoginPage.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/src/pages/LoginPage.js: Unexpected token, expected "}" (35:6)
+
+  33 |           static header across all pages. */<h2>Login</h2>
+  34 |
+> 35 |       {/* FORM: style the form by targeting .auth-form or the input/button elements in CSS.
+     |       ^
+  36 |           To change input borders and button colors, edit `.auth-input`, `.auth-button` in CSS. */}
+  37 |       <form className="auth-form" onSubmit={handleLogin}>
+  38 |         <input
+    at constructor (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at FlowParserMixin.raise (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at FlowParserMixin.unexpected (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at FlowParserMixin.expect (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at FlowParserMixin.jsxParseExpressionContainer (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4670:10)
+    at FlowParserMixin.jsxParseElementAt (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4744:36)
+    at FlowParserMixin.jsxParseElementAt (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4731:32)
+    at FlowParserMixin.jsxParseElement (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4782:17)
+    at FlowParserMixin.parseExprAtom (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4792:19)
+    at FlowParserMixin.parseExprSubscripts (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at FlowParserMixin.parseUpdate (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at FlowParserMixin.parseExprOps (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at /Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:3531:39
+    at FlowParserMixin.tryParse (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at FlowParserMixin.parseMaybeAssign (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:3531:18)
+    at /Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at FlowParserMixin.allowInAnd (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12436:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at FlowParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12503:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11683:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:3624:18)
+    at FlowParserMixin.parseExprAtom (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at FlowParserMixin.parseExprAtom (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4797:20)
+    at FlowParserMixin.parseExprSubscripts (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at FlowParserMixin.parseUpdate (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at FlowParserMixin.parseExprOps (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at FlowParserMixin.parseMaybeAssign (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:3582:18)
+    at FlowParserMixin.parseExpressionBase (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at FlowParserMixin.allowInAnd (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at FlowParserMixin.parseExpression (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at FlowParserMixin.parseReturnStatement (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at FlowParserMixin.parseStatementContent (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at FlowParserMixin.parseStatementLike (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at FlowParserMixin.parseStatementLike (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:2949:24)
+    at FlowParserMixin.parseStatementListItem (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at FlowParserMixin.parseBlockBody (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at FlowParserMixin.parseBlock (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at FlowParserMixin.parseFunctionBody (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at FlowParserMixin.parseFunctionBody (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:2926:11)
+    at FlowParserMixin.parseFunctionBodyAndFinish (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12096:10)
+
+ERROR in [eslint] 
+src/pages/LoginPage.js
+  Line 35:6:  Parsing error: Unexpected token, expected "}" (35:6)
+
+webpack compiled with 2 errors and 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/pages/LoginPage.js
+Syntax error: Unexpected token, expected "}" (35:6) (35:6)
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+ERROR in ./src/pages/LoginPage.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/src/pages/LoginPage.js: Unexpected token, expected "}" (35:6)
+
+  33 |           static header across all pages. */<h2>Login</h2>
+  34 |
+> 35 |       {/* FORM: style the form by targeting .auth-form or the input/button elements in CSS.
+     |       ^
+  36 |           To change input borders and button colors, edit `.auth-input`, `.auth-button` in CSS. */}
+  37 |       <form className="auth-form" onSubmit={handleLogin}>
+  38 |         <input
+    at constructor (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at FlowParserMixin.raise (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at FlowParserMixin.unexpected (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at FlowParserMixin.expect (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at FlowParserMixin.jsxParseExpressionContainer (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4670:10)
+    at FlowParserMixin.jsxParseElementAt (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4744:36)
+    at FlowParserMixin.jsxParseElementAt (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4731:32)
+    at FlowParserMixin.jsxParseElement (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4782:17)
+    at FlowParserMixin.parseExprAtom (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4792:19)
+    at FlowParserMixin.parseExprSubscripts (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at FlowParserMixin.parseUpdate (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at FlowParserMixin.parseExprOps (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at /Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:3531:39
+    at FlowParserMixin.tryParse (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at FlowParserMixin.parseMaybeAssign (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:3531:18)
+    at /Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at FlowParserMixin.allowInAnd (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12436:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at FlowParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12503:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11683:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:3624:18)
+    at FlowParserMixin.parseExprAtom (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at FlowParserMixin.parseExprAtom (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:4797:20)
+    at FlowParserMixin.parseExprSubscripts (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at FlowParserMixin.parseUpdate (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at FlowParserMixin.parseMaybeUnary (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at FlowParserMixin.parseExprOps (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at FlowParserMixin.parseMaybeConditional (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at FlowParserMixin.parseMaybeAssign (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at FlowParserMixin.parseMaybeAssign (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:3582:18)
+    at FlowParserMixin.parseExpressionBase (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at FlowParserMixin.allowInAnd (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at FlowParserMixin.parseExpression (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at FlowParserMixin.parseReturnStatement (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at FlowParserMixin.parseStatementContent (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at FlowParserMixin.parseStatementLike (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at FlowParserMixin.parseStatementLike (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:2949:24)
+    at FlowParserMixin.parseStatementListItem (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at FlowParserMixin.parseBlockBody (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at FlowParserMixin.parseBlock (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at FlowParserMixin.parseFunctionBody (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at FlowParserMixin.parseFunctionBody (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:2926:11)
+    at FlowParserMixin.parseFunctionBodyAndFinish (/Users/josephita/Downloads/CS353_Team17-CenseV0.3/frontend/node_modules/@babel/parser/lib/index.js:12096:10)
+
+ERROR in [eslint] 
+src/pages/LoginPage.js
+  Line 35:6:  Parsing error: Unexpected token, expected "}" (35:6)
+
+webpack compiled with 2 errors and 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src/pages/LoginPage.js
+  Line 30:21:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src/pages/LoginPage.js
+  Line 30:21:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src/pages/LoginPage.js
+  Line 30:21:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src/pages/LoginPage.js
+  Line 30:21:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src/pages/LoginPage.js
+  Line 30:21:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+src/pages/LoginPage.js
+  Line 30:21:  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/HomePage.js
+  Line 32:6:  React Hook useEffect has missing dependencies: 'fetchExpenses' and 'fetchIncomes'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning

@@ -1,0 +1,98 @@
+/* Login page background — prefer scoping to .page-container so it only applies to auth pages.
+   Use the public folder path (/images/...) so the file is served correctly by CRA. */
+.page-container {
+  /* The login background has been moved to `public/styles/login.css`.
+     Keep this lightweight file to avoid webpack resolving /images paths from `src/`. */
+  position: relative; /* create stacking context for overlay */
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* subtle dark overlay so text on top of the image remains readable */
+.page-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  pointer-events: none; /* allow clicks through to inputs */
+}
+
+/* Ensure auth form and header sit above the overlay */
+.page-container .auth-form,
+.page-container .site-header,
+.page-container h2,
+.page-container p {
+  position: relative;
+  z-index: 2;
+}
+
+/* If you want this background globally, import this file in `src/index.js` instead. */
+
+/* Small global reset for auth pages so the background touches the very top */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Convenience wrapper when you only want the login to have the background.
+   Wrap the login route content with a `.login-page` element and the
+   `.page-container` rules above will make the background fill the viewport. */
+.login-page, .login-page .page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* move content lower on the page so it fits without scrolling on common viewports */
+  justify-content: flex-start;
+  /* give a responsive top padding tuned for desktop 100% zoom - increased so details sit lower */
+  padding-top: 14vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 6vh;
+  box-sizing: border-box;
+  /* override global page-container margins/padding so login styling wins */
+  margin-top: 0 !important;
+}
+
+/* Reduce the top padding on small screens so the form doesn't get pushed off-screen */
+@media (max-width: 480px) {
+  .login-page, .login-page .page-container {
+    padding-top: 6vh;
+    padding-bottom: 4vh;
+  }
+}
+
+/* On very tall or desktop screens we can push it a bit more downward for visual balance */
+@media (min-height: 900px) {
+  .login-page, .login-page .page-container {
+    padding-top: 14vh;
+  }
+}
+
+/* Make header transparent on the login page so its white background doesn't hide the image */
+.login-page .site-header {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+.login-page .site-header-inner {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+/* Slightly reduce logo size on the login page so header takes less vertical space */
+.login-page .logo-img {
+  height: 30px;
+}
+/* NOTE
+   The login background and stripe styles are served from `public/styles/login.css`.
+   This file used to contain the same rules but importing an image with a leading
+   slash would cause CRA to try to resolve `/images/...` from inside `src/` and
+   produce build-time errors. Keep this file intentionally minimal to avoid bundler
+   conflicts. */
+
+/* Minimal reset to avoid unused CSS imports causing compile errors. */
+/* No styles here; see public/styles/login.css for login-specific styles. */

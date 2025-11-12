@@ -1,0 +1,128 @@
+/* Login-specific background and overlay (served from public so CRA doesn't process URLs)
+   This file is loaded from public/index.html and only affects pages that contain the
+   `.login-page` wrapper. */
+
+/* Make the background cover the full viewport and center content vertically.
+   Use min-height:100vh so it expands to the full browser height even if content is small. */
+.login-page {
+  min-height: 100vh;
+  display: flex; /* used to center the content */
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+}
+
+/* Yellow accent stripe across the very top of the login page */
+.login-page {
+  position: relative; /* needed for the top stripe pseudo-element */
+}
+
+.login-page::before {
+  /* make the top stripe height configurable and much thicker by default */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Use viewport-relative height so the stripe grows proportionally on different screens.
+     `--top-stripe-height` makes it easy to tune. Set to a large value so it visibly "touches"
+     the background image below. */
+  --top-stripe-height: 14vh;
+  height: var(--top-stripe-height);
+  background: #FFD400; /* warm yellow */
+  z-index: 3; /* above overlay and background */
+  pointer-events: none;
+}
+
+/* Style the top stripe text element we injected into the DOM */
+.top-stripe-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--top-stripe-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  color: #111; /* dark text to contrast the yellow */
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  pointer-events: none;
+}
+
+/* Logo positioned on the top-left inside the yellow stripe */
+/* Top-stripe logo size (edit this value to change the logo on the login stripe).
+   You can change `--top-stripe-logo-height` to any px value you like. */
+/* Top-stripe logo size (edit this value to change the logo on the login stripe).
+   You can change `--top-stripe-logo-height` to any px value you like. */
+.top-stripe-logo {
+  --top-stripe-logo-height: 80px; /* <- edit this value to resize the logo */
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  transform: none;
+  height: var(--top-stripe-logo-height);
+  width: auto;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* Make the logo slightly smaller on very small screens */
+@media (max-width: 480px) {
+  .top-stripe-logo {
+    height: calc(var(--top-stripe-logo-height) * 0.75);
+    left: 6px;
+    top: 6px;
+  }
+}
+
+.login-page .page-container {
+  background-image: url('/images/background.jpg');
+  background-size: cover; /* keeps aspect ratio and covers entire area */
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative; /* create stacking context for overlay */
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh; /* ensure the page-container itself fills the viewport */
+}
+
+.login-page .page-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.login-page .page-container .auth-form,
+.login-page .page-container .site-header,
+.login-page .page-container h2,
+.login-page .page-container p {
+  position: relative;
+  z-index: 2;
+}
+/* Hide the header logo on the login page to avoid duplicate logos. */
+.login-page .site-header .logo-img {
+  display: none !important;
+}
+
+/* Make the main login title clearly visible by coloring it yellow and adding a subtle shadow */
+.login-page .page-container h2 {
+  color: #FFD400; /* same warm yellow used for the top stripe */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+/* Color the small prompt and its link in yellow so it's visible against the background */
+.login-page .page-container p.mt-10 {
+  color: #FFD400;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.login-page .page-container p.mt-10 a {
+  color: #FFD400;
+  text-decoration: underline;
+}
