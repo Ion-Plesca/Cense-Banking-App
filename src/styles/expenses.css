@@ -1,0 +1,81 @@
+.expenses-page {
+  padding: 1.5rem;
+  padding-bottom: 100px; 
+  text-align: center;
+  color: white;
+}
+
+.title {
+  color: #FFEB3B;
+  margin-bottom: 1rem;
+}
+
+.section-card,
+.list-card {
+  background-color: white;
+  color: #001B79;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: none;
+  background: #ffffff;
+  color: #001B79;
+  font-size: 1rem;
+}
+
+.auth-button {
+  width: 90%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: none;
+  background-color: #FFEB3B;
+  color: #001B79;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  background-color: #FFD700;
+}
+
+.expense-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-item {
+  background: #f2f2f2;
+  color: #001B79;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.expense-info span {
+  display: block;
+  margin-top: 4px;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #444;
+}
