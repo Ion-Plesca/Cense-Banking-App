@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import './Expenses.css';
 
 function Expenses() {
   const [expenses, setExpenses] = useState([]);
@@ -30,17 +31,11 @@ function Expenses() {
       return;
     }
 
-    const newExpense = {
-      user_id,
-      title,
-      amount,
-      category,
-      date,
-    };
+    const newExpense = { user_id, title, amount, category, date };
 
     try {
       await axios.post("http://localhost:5000/api/expenses", newExpense);
-      fetchExpenses(); // reload list
+      fetchExpenses();
       clearForm();
     } catch (err) {
       console.error(err);
@@ -89,14 +84,15 @@ function Expenses() {
   };
 
   return (
-    <div className="page">
-      <h1>Expenses</h1>
+    <div className="expenses-page">
+      <h1 className="title">Expenses</h1>
 
-      //input
-      <div className="card">
+      {/* Form */}
+      <div className="section-card">
         <h2>{editingId ? "Update Expense" : "Add Expense"}</h2>
 
         <input
+          className="auth-input"
           type="text"
           placeholder="Expense Title"
           value={title}
@@ -104,13 +100,18 @@ function Expenses() {
         />
 
         <input
+          className="auth-input"
           type="number"
           placeholder="Amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
 
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <select
+          className="auth-input"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
           <option value="">Select Category</option>
           <option value="Food">Food</option>
           <option value="Transport">Transport</option>
@@ -120,34 +121,48 @@ function Expenses() {
         </select>
 
         <input
+          className="auth-input"
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
 
         {!editingId ? (
-          <button onClick={handleAddExpense}>Add Expense</button>
+          <button className="auth-button" onClick={handleAddExpense}>
+            Add Expense
+          </button>
         ) : (
-          <button onClick={handleUpdate}>Save Changes</button>
+          <button className="auth-button" onClick={handleUpdate}>
+            Save Changes
+          </button>
         )}
       </div>
-      
-      //list
-      {expenses.length === 0 ? (
-        <p>No expenses added yet.</p>
-      ) : (
-        expenses.map((expense) => (
-          <div key={expense.id} className="card">
-            <h2>{expense.title}</h2>
-            <p>Amount: €{expense.amount}</p>
-            <p>Category: {expense.category}</p>
-            <p>Date: {expense.date}</p>
 
-            <button onClick={() => startEditing(expense)}>Edit</button>
-            <button onClick={() => handleDelete(expense.id)}>Delete</button>
-          </div>
-        ))
-      )}
+      {/* Expense List */}
+      <ul className="expense-list">
+        {expenses.length === 0 ? (
+          <p>No expenses added yet.</p>
+        ) : (
+          expenses.map((expense) => (
+            <li key={expense.id} className="expense-item">
+              <div className="expense-info">
+                <span><strong>{expense.title}</strong></span>
+                <span>Amount: €{expense.amount}</span>
+                <span>Category: {expense.category}</span>
+                <span className="date">Date: {expense.date}</span>
+              </div>
+
+              <button className="auth-button" onClick={() => startEditing(expense)}>
+                Edit
+              </button>
+
+              <button className="auth-button" onClick={() => handleDelete(expense.id)}>
+                Delete
+              </button>
+            </li>
+          ))
+        )}
+      </ul>
     </div>
   );
 }
