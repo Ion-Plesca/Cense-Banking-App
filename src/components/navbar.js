@@ -38,7 +38,7 @@ function Navbar()
           borderRadius: "6px"
         }}>
           <Link to="/" style={{ color: "white", textDecoration: "none", display: "block", margin: "8px 0" }}>Home</Link>
-          <Link to="/expenses" style={{ color: "white", textDecoration: "none", display: "block", margin: "8px 0" }}>Expenses</Link>
+          <Link to="/Expenses" style={{ color: "white", textDecoration: "none", display: "block", margin: "8px 0" }}>Expenses</Link>
           <Link to="/income" style={{ color: "white", textDecoration: "none", display: "block", margin: "8px 0" }}>Incomes</Link>
           <Link to="/logout" style={{ color: "white", textDecoration: "none", display: "block", margin: "8px 0" }}>Logout</Link>
         </div>
