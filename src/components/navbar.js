@@ -15,9 +15,8 @@ function Navbar()
       alignItems: "center"
     }}>
       
-      <h2>Finance Tracker</h2>
+      <h2>Cense</h2>
 
-      //button
       <div
         onClick={() => setOpen(!open)}
         style={{
