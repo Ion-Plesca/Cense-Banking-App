@@ -36,7 +36,7 @@ export default function Settings() {
           <span className="big-c">C</span>ense
         </div>
 
-        {/* ⬇️ REPLACED BUTTONS WITH LINKS */}
+        {/* REPLACED BUTTONS WITH LINKS */}
         <Link to="/expenses" className="nav-btn">Expenses</Link>
         <Link to="/tracker" className="nav-btn">Tracker</Link>
         <Link to="/predictions" className="nav-btn">Predictions</Link>
