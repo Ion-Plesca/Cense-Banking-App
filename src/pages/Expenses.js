@@ -42,11 +42,8 @@ function Expenses() {
 
     try {
       await axios.post("http://localhost:5000/api/expenses", newExpense);
-<<<<<<< HEAD:src/pages/expenses.js
       fetchExpenses(); {/* reload list*/}
-=======
       fetchExpenses();
->>>>>>> 19054aabbb51193d586683c272f866c43e4a4243:src/pages/Expenses.js
       clearForm();
     } catch (err) {
       console.error(err);
@@ -98,10 +95,7 @@ function Expenses() {
     <div className="page">
       <h1>Expenses</h1>
 
-<<<<<<< HEAD:src/pages/expenses.js
       {/*input*/}
-=======
->>>>>>> 19054aabbb51193d586683c272f866c43e4a4243:src/pages/Expenses.js
       <div className="card">
         <h2>{editingId ? "Update Expense" : "Add Expense"}</h2>
 
@@ -140,12 +134,8 @@ function Expenses() {
           <button onClick={handleUpdate}>Save Changes</button>
         )}
       </div>
-<<<<<<< HEAD:src/pages/expenses.js
       
       {/*list*/}
-=======
-
->>>>>>> 19054aabbb51193d586683c272f866c43e4a4243:src/pages/Expenses.js
       {expenses.length === 0 ? (
         <p>No expenses added yet.</p>
       ) : (
@@ -165,4 +155,4 @@ function Expenses() {
   );
 }
 
-export default Expenses; 
+export default Expenses;
