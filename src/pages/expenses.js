@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 function Expenses() {
   const [expenses, setExpenses] = useState([]);
@@ -40,7 +41,7 @@ function Expenses() {
 
     try {
       await axios.post("http://localhost:5000/api/expenses", newExpense);
-      fetchExpenses(); // reload list
+      fetchExpenses(); {/* reload list*/}
       clearForm();
     } catch (err) {
       console.error(err);
@@ -92,7 +93,7 @@ function Expenses() {
     <div className="page">
       <h1>Expenses</h1>
 
-      //input
+      {/*input*/}
       <div className="card">
         <h2>{editingId ? "Update Expense" : "Add Expense"}</h2>
 
@@ -132,7 +133,7 @@ function Expenses() {
         )}
       </div>
       
-      //list
+      {/*list*/}
       {expenses.length === 0 ? (
         <p>No expenses added yet.</p>
       ) : (
