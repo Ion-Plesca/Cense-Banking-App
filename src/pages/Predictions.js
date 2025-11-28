@@ -1,5 +1,5 @@
 import React from "react";
-import "./../styles/predictions.css";
+import "./../styles/Predictions.css";
 
 function PredictionsPage() {
   return (
