@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import API from "../api";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import "../styles/Expenses.css";
 
 function Expenses() {
   const [expenses, setExpenses] = useState([]);
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
-  const [date, setDate] = useState("");
+  const [note, setNote] = useState("");
+  const [amount, setAmount] = useState("");
+  const [occurred, setOccurred] = useState("");
   const [editingId, setEditingId] = useState(null);
 
   const user_id = localStorage.getItem("user_id");
@@ -19,7 +18,9 @@ function Expenses() {
 
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/expenses/${user_id}`);
+      const res = await axios.get(
+        `http://localhost:5000/api/expenses/${user_id}`
+      );
       setExpenses(res.data);
     } catch (err) {
       console.error(err);
@@ -27,24 +28,23 @@ function Expenses() {
   };
 
   const handleAddExpense = async () => {
-    if (!title || !amount || !category || !date) {
+    if (!category || !note || !amount || !occurred) {
       alert("Please fill all fields");
       return;
     }
 
     const newExpense = {
       user_id,
-      title,
-      amount,
       category,
-      date,
+      note,
+      amount,
+      occurred,
     };
 
     try {
       await axios.post("http://localhost:5000/api/expenses", newExpense);
-      fetchExpenses(); {/* reload list*/}
-      fetchExpenses();
       clearForm();
+      fetchExpenses();
     } catch (err) {
       console.error(err);
     }
@@ -60,14 +60,18 @@ function Expenses() {
   };
 
   const handleUpdate = async () => {
-    try {
-      await axios.put(`http://localhost:5000/api/expenses/${editingId}`, {
-        title,
-        amount,
-        category,
-        date,
-      });
+    const updated = {
+      category,
+      note,
+      amount,
+      occurred,
+    };
 
+    try {
+      await axios.put(
+        `http://localhost:5000/api/expenses/${editingId}`,
+        updated
+      );
       setEditingId(null);
       clearForm();
       fetchExpenses();
@@ -77,41 +81,27 @@ function Expenses() {
   };
 
   const startEditing = (expense) => {
-    setTitle(expense.title);
-    setAmount(expense.amount);
     setCategory(expense.category);
-    setDate(expense.date);
+    setNote(expense.note);
+    setAmount(expense.amount);
+    setOccurred(expense.occurred);
     setEditingId(expense.id);
   };
 
   const clearForm = () => {
-    setTitle("");
-    setAmount("");
     setCategory("");
-    setDate("");
+    setNote("");
+    setAmount("");
+    setOccurred("");
   };
 
   return (
     <div className="page">
       <h1>Expenses</h1>
 
-      {/*input*/}
+      {/* Add / Update Form */}
       <div className="card">
         <h2>{editingId ? "Update Expense" : "Add Expense"}</h2>
-
-        <input
-          type="text"
-          placeholder="Expense Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-
-        <input
-          type="number"
-          placeholder="Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
 
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="">Select Category</option>
@@ -123,9 +113,23 @@ function Expenses() {
         </select>
 
         <input
+          type="text"
+          placeholder="Note"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        />
+
+        <input
+          type="number"
+          placeholder="Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+
+        <input
           type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
+          value={occurred}
+          onChange={(e) => setOccurred(e.target.value)}
         />
 
         {!editingId ? (
@@ -134,22 +138,48 @@ function Expenses() {
           <button onClick={handleUpdate}>Save Changes</button>
         )}
       </div>
-      
-      {/*list*/}
+
+      {/* Expenses List */}
       {expenses.length === 0 ? (
         <p>No expenses added yet.</p>
       ) : (
-        expenses.map((expense) => (
-          <div key={expense.id} className="card">
-            <h2>{expense.title}</h2>
-            <p>Amount: €{expense.amount}</p>
-            <p>Category: {expense.category}</p>
-            <p>Date: {expense.date}</p>
+        <div className="expenses-container">
+          {expenses.map((expense) => (
+            <div
+              key={expense.id}
+              className={`expense-card category-${expense.category.toLowerCase()}`}
+            >
+              <h3>{expense.note}</h3>
+              <p>
+                <strong>Category:</strong> {expense.category}
+              </p>
+              <p>
+                <strong>Amount:</strong> €{expense.amount}
+              </p>
+              <p>
+                <strong>Date:</strong>{" "}
+                {expense.occurred
+                  ? new Date(expense.occurred).toLocaleDateString()
+                  : ""}
+              </p>
 
-            <button onClick={() => startEditing(expense)}>Edit</button>
-            <button onClick={() => handleDelete(expense.id)}>Delete</button>
-          </div>
-        ))
+              <div className="button-row">
+                <button
+                  onClick={() => startEditing(expense)}
+                  className="edit-btn"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(expense.id)}
+                  className="delete-btn"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
