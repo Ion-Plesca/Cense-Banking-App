@@ -15,6 +15,10 @@ import Settings from "./pages/Settings";
 import Tracker from "./pages/Tracker";
 import Predictions from "./pages/Predictions";
 import Suggestions from "./pages/Suggestions";
+import AccountManagementPage from "./pages/AccountManagementPage";
+import OtherAccountsPage from "./pages/OtherAccountsPage";
+import PrivacyDataPage from "./pages/PrivacyDataPage";
+
 
 import Navbar from "./components/Navbar";
 
@@ -55,6 +59,11 @@ function AppContent({ user, setUser }) {
 
             <Route path="/" element={<Navigate to="/homepage" />} />
             <Route path="/login" element={<Navigate to="/homepage" />} />
+            
+<Route path="/settings/account-management" element={<AccountManagementPage />} />
+<Route path="/settings/other-accounts" element={<OtherAccountsPage />} />
+<Route path="/settings/privacy-data" element={<PrivacyDataPage />} />
+
           </>
         )}
       </Routes>

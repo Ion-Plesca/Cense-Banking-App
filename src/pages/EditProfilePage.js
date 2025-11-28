@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import "../styles/Settings.css";
-import { Link, useNavigate } from "react-router-dom";   // ADDED useNavigate
-import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
+import "../styles/Settings.css"; // reuse existing styles
 
-export default function Settings() {
-  const navigate = useNavigate(); // ADDED
+export default function EditProfilePage() {
+  const navigate = useNavigate();
 
   const [profileImg, setProfileImg] = useState(null);
   const [formData, setFormData] = useState({
@@ -33,20 +32,8 @@ export default function Settings() {
 
   return (
     <div className="settings-container">
-      <nav className="sidebar">
-        <div className="logo">
-          <span className="big-c">C</span>ense
-        </div>
-
-        <Link to="/expenses" className="nav-btn">Expenses</Link>
-        <Link to="/tracker" className="nav-btn">Tracker</Link>
-        <Link to="/predictions" className="nav-btn">Predictions</Link>
-        <Link to="/suggestions" className="nav-btn">Suggestions</Link>
-      </nav>
-
       <main className="main">
-
-        {/* ✅ BACK BUTTON THAT DOES NOT CHANGE LAYOUT */}
+        {/* Back button */}
         <button className="back-btn-fixed" onClick={() => navigate(-1)}>
           ⬅
         </button>
@@ -58,14 +45,12 @@ export default function Settings() {
 
         <div className="profile-card">
           <h2>Photo</h2>
-
           <div className="photo-wrapper">
             <img
               src={profileImg || "/images/default-avatar.png"}
               className="profile-placeholder"
               alt="Profile"
             />
-
             <label className="change-btn">
               Change
               <input type="file" hidden onChange={handleChangePhoto} />
@@ -106,12 +91,6 @@ export default function Settings() {
             Save Changes
           </button>
         </div>
-
-<aside className="side-links">
-  <Link to="/settings/account-management">Account management</Link>
-  <Link to="/settings/other-accounts">Other accounts</Link>
-  <Link to="/settings/privacy-data">Privacy and data</Link>
-</aside>
       </main>
     </div>
   );
