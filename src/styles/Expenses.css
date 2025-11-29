@@ -22,7 +22,7 @@
   color: yellow;
 }
 
-/* add updates */
+/* ADD/UPDATE  */
 .card {
   background: #ffffff;
   border: 1px solid #E0E0E0;
@@ -63,14 +63,14 @@
   opacity: 0.9;
 }
 
-/* saved expenses */
+/* list */
 .expenses-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* expense */
+/* card */
 .expense-card {
   background: white;
   border: 2px solid #E0E0E0;
@@ -92,7 +92,7 @@
   font-size: 16px;
 }
 
-/* colors */
+/* CATEGORY COLORS */
 .category-food {
   border-color: #4CAF50;
 }
@@ -128,7 +128,7 @@
   color: #FF9800;
 }
 
-/* row */
+/*  row */
 .button-row {
   display: flex;
   gap: 10px;
@@ -143,7 +143,7 @@
   cursor: pointer;
 }
 
-/* edit */
+/* edit  */
 .edit-btn {
   background: #FFD54F;
   border: none;
@@ -152,7 +152,7 @@
   background: #ffca28;
 }
 
-/* delete */
+/* delete  */
 .delete-btn {
   background: #EB4335;
   color: white;
