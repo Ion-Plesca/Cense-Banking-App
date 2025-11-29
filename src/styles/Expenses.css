@@ -1,117 +1,98 @@
+/* main */
+.main {
+  flex: 1;
+  background: #000a4d;
+  color: yellow;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+/* page */
 .page {
   max-width: 900px;
   margin: 0 auto;
-  padding: 30px 20px;
   font-family: Inter, sans-serif;
-  color: #ffffff;
 }
 
 .page h1 {
   text-align: center;
-  margin-bottom: 25px;
-  font-size: 34px;
+  margin-bottom: 20px;
+  font-size: 32px;
   font-weight: 700;
-  color: #ffea00;
+  color: yellow;
 }
 
+/* add updates */
 .card {
   background: #ffffff;
-  border: 1px solid #d9d9d9;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-  margin-bottom: 30px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: black;
 }
 
 .card h2 {
-  margin-bottom: 20px;
-  font-size: 26px;
-  font-weight: 700;
-  color: #001a66;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
 .card select,
 .card input {
   width: 100%;
-  padding: 14px 16px;
-  margin-bottom: 16px;
-  border: 1px solid #dcdcdc;
-  background: #f6f6f6;
-  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #CFCFCF;
+  border-radius: 6px;
   font-size: 16px;
-  transition: 0.2s ease;
-  color: #333;
-  box-sizing: border-box;
-}
-
-.card select:hover,
-.card input:hover {
-  background: #ffffff;
-  border-color: #bfbfbf;
-}
-
-.card select:focus,
-.card input:focus {
-  background: #ffffff;
-  border-color: #2d6eff;
-  box-shadow: 0 0 0 3px rgba(45, 110, 255, 0.2);
-  outline: none;
 }
 
 .card button {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(90deg, #2d6eff, #1a4dd9);
+  padding: 12px;
+  background: #2D6EFF;
   border: none;
   color: white;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 12px;
+  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .card button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(45, 110, 255, 0.4);
+  opacity: 0.9;
 }
 
+/* saved expenses */
 .expenses-container {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 16px;
 }
 
+/* expense */
 .expense-card {
   background: white;
-  border: 2px solid #e0e0e0;
-  padding: 22px;
-  border-radius: 16px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.10);
-  transition: 0.2s ease;
+  border: 2px solid #E0E0E0;
+  padding: 16px;
+  border-radius: 8px;
+  color: black;
 }
 
-.expense-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-}
-
+/* title */
 .expense-card h3 {
-  margin-bottom: 10px;
-  font-size: 22px;
+  margin-bottom: 8px;
+  font-size: 20px;
   font-weight: 700;
 }
 
+/* info */
 .expense-card p {
-  margin: 6px 0;
+  margin: 4px 0;
   font-size: 16px;
-  color: #333;
 }
 
-strong {
-  color: #000;
-}
-
+/* colors */
 .category-food {
   border-color: #4CAF50;
 }
@@ -147,42 +128,36 @@ strong {
   color: #FF9800;
 }
 
+/* row */
 .button-row {
   display: flex;
-  gap: 12px;
-  margin-top: 18px;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .button-row button {
   flex: 1;
-  padding: 12px;
+  padding: 10px;
   font-size: 15px;
-  font-weight: 600;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
+/* edit */
 .edit-btn {
-  background: #ffeb99;
+  background: #FFD54F;
   border: none;
 }
 .edit-btn:hover {
-  background: #ffe066;
+  background: #ffca28;
 }
 
+/* delete */
 .delete-btn {
-  background: #e53935;
+  background: #EB4335;
   color: white;
   border: none;
 }
 .delete-btn:hover {
-  background: #c62828;
-}
-
-.empty-text {
-  color: #bbbbbb;
-  text-align: center;
-  font-size: 16px;
-  margin-top: 20px;
+  background: #d63a2d;
 }
