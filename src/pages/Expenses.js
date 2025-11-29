@@ -31,10 +31,15 @@ function Expenses() {
       return;
     }
 
-    const newExpense = { user_id, category, note, amount, occurred };
-
     try {
-      await axios.post("http://localhost:5000/api/expenses", newExpense);
+      await axios.post("http://localhost:5000/api/expenses", {
+        user_id,
+        category,
+        note,
+        amount,
+        occurred,
+      });
+
       clearForm();
       fetchExpenses();
     } catch (err) {
@@ -52,10 +57,14 @@ function Expenses() {
   };
 
   const handleUpdate = async () => {
-    const updated = { category, note, amount, occurred };
-
     try {
-      await axios.put(`http://localhost:5000/api/expenses/${editingId}`, updated);
+      await axios.put(`http://localhost:5000/api/expenses/${editingId}`, {
+        category,
+        note,
+        amount,
+        occurred,
+      });
+
       setEditingId(null);
       clearForm();
       fetchExpenses();
@@ -64,12 +73,12 @@ function Expenses() {
     }
   };
 
-  const startEditing = (exp) => {
-    setCategory(exp.category);
-    setNote(exp.note);
-    setAmount(exp.amount);
-    setOccurred(exp.occurred);
-    setEditingId(exp.id);
+  const startEditing = (expense) => {
+    setCategory(expense.category);
+    setNote(expense.note);
+    setAmount(expense.amount);
+    setOccurred(expense.occurred);
+    setEditingId(expense.id);
   };
 
   const clearForm = () => {
@@ -77,6 +86,22 @@ function Expenses() {
     setNote("");
     setAmount("");
     setOccurred("");
+  };
+
+  // CATEGORY → CSS MAP
+  const getCategoryClass = (cat) => {
+    switch (cat) {
+      case "Food":
+        return "category-food";
+      case "Transport":
+        return "category-transport";
+      case "Bills":
+        return "category-bills";
+      case "Shopping":
+        return "category-shopping";
+      default:
+        return "category-other";
+    }
   };
 
   return (
@@ -124,35 +149,24 @@ function Expenses() {
         </div>
 
         <div className="expenses-container">
-          {expenses.length === 0 ? (
-            <p>No expenses added yet.</p>
-          ) : (
-            expenses.map((exp) => (
-              <div
-                key={exp.id}
-                className={`expense-card category-${exp.category.toLowerCase()}`}
-              >
-                <h3>{exp.note}</h3>
-                <p>Category: {exp.category}</p>
-                <p>Amount: €{exp.amount}</p>
-                <p>Date: {exp.occurred}</p>
+          {expenses.map((expense) => (
+            <div
+              key={expense.id}
+              className={`expense-card ${getCategoryClass(expense.category)}`}
+            >
+              <h3>{expense.note}</h3>
+              <p>Category: {expense.category}</p>
+              <p>Amount: €{expense.amount}</p>
+              <p>Date: {expense.occurred}</p>
 
-                <div className="button-row">
-                  <button className="edit-btn" onClick={() => startEditing(exp)}>
-                    Edit
-                  </button>
-
-                  <button
-                    className="delete-btn"
-                    onClick={() => handleDelete(exp.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
+              <div className="button-row">
+                <button className="edit-btn" onClick={() => startEditing(expense)}>Edit</button>
+                <button className="delete-btn" onClick={() => handleDelete(expense.id)}>Delete</button>
               </div>
-            ))
-          )}
+            </div>
+          ))}
         </div>
+
       </div>
     </div>
   );
