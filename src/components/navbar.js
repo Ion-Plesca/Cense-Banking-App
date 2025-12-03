@@ -6,6 +6,11 @@ function Navbar() {
   const username = localStorage.getItem("username");
   const profilePicture = localStorage.getItem("profile_picture");
 
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.href = "/login"; // Hard redirect (fix)
+  };
+
   return (
     <nav className="nav-container">
 
@@ -17,7 +22,7 @@ function Navbar() {
 
       {/* LINKS */}
       <div className="nav-links">
-        <Link to="/HomePage" className="nav-btn">Home</Link>
+        <Link to="/homepage" className="nav-btn">Home</Link>
         <Link to="/tracker" className="nav-btn">Tracker</Link>
         <Link to="/predictions" className="nav-btn">Predictions</Link>
         <Link to="/suggestions" className="nav-btn">Suggestions</Link>
@@ -25,26 +30,24 @@ function Navbar() {
         <Link to="/settings" className="nav-btn">Settings</Link>
       </div>
 
-      {/* PROFILE AREA */}
+      {/* PROFILE + LOGOUT */}
       <div className="nav-profile">
 
-        {/* Profile Picture */}
         {profilePicture ? (
-          <img 
-            src={profilePicture}
-            alt="avatar"
-            className="nav-avatar"
-          />
+          <img src={profilePicture} alt="avatar" className="nav-avatar" />
         ) : (
           <div className="profile-circle"></div>
         )}
 
-        {/* Username */}
         <span className="nav-username">
-          {username ? username : ""}
+          {username || ""}
         </span>
-      </div>
 
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
+
+      </div>
     </nav>
   );
 }
