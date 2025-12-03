@@ -8,56 +8,60 @@ function LoginPage({ onLogin }) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     try {
       const res = await API.post("/users/login", { email, password });
+      const user = res.data.user;
+
+      localStorage.setItem("user_id", user.user_id);
+      localStorage.setItem("username", user.username || "");
+      localStorage.setItem("profile_picture", user.profile_picture || "");
+
       alert(res.data.message);
-      onLogin(res.data.user); 
+      onLogin(user);
+
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
     }
   };
 
   return (
-    // Use `page-container` class in CSS to control page background, padding and borders.
-    // This page wraps the container in `.login-page` so public/styles/login.css
-    // (loaded from public/index.html) applies the background + overlay only here.
     <div className="login-page">
-      {/* small logo placed inside the yellow stripe at top-left */}
       <img src="/images/logo.png" alt="logo" className="top-stripe-logo" />
       <div className="top-stripe-text">Welcome to Cense</div>
+
       <div className="page-container">
-      
-      <h2>Login</h2>
+        <h2>Login</h2>
 
+        <form className="auth-form" onSubmit={handleLogin}>
+          <input
+            className="auth-input"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-      {/* FORM: style the form by targeting .auth-form or the input/button elements in CSS.
-          To change input borders and button colors, edit `.auth-input`, `.auth-button` in CSS. */}
-      <form className="auth-form" onSubmit={handleLogin}>
-        <input
-          className="auth-input"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <br /><br />
-        <input
-          className="auth-input"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <br /><br />
-        <button className="auth-button" type="submit">Login</button>
-      </form>
+          <br /><br />
 
-      <p className="mt-10">
-        Don't have an account?{" "}
-        <Link to="/register">Create one here</Link>
-      </p>
+          <input
+            className="auth-input"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <br /><br />
+
+          <button className="auth-button" type="submit">Login</button>
+        </form>
+
+        <p className="mt-10">
+          Don't have an account? <Link to="/register">Create one here</Link>
+        </p>
       </div>
     </div>
   );

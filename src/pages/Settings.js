@@ -1,24 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Settings.css";
-import { Link, useNavigate } from "react-router-dom";   // ADDED useNavigate
-import Navbar from "../components/Navbar";
+import { Link, useNavigate } from "react-router-dom";
+import API from "../api";
 
 export default function Settings() {
-  const navigate = useNavigate(); // ADDED
+  const navigate = useNavigate();
+  const user_id = localStorage.getItem("user_id");
 
-  const [profileImg, setProfileImg] = useState(null);
+  const [editing, setEditing] = useState(false);
+  const [profilePicture, setProfilePicture] = useState(null);
+
   const [formData, setFormData] = useState({
-    firstName: "Kelly",
-    surname: "Wilson",
-    username: "kelly12345",
+    username: "",
   });
+
+  useEffect(() => {
+    async function loadUser() {
+      try {
+        const res = await API.get(`/users/${user_id}`);
+        const user = res.data;
+
+        setFormData({
+          username: user.username || "",
+        });
+
+        setProfilePicture(user.profile_picture || null);
+
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    loadUser();
+  }, [user_id]);
 
   function handleChangePhoto(e) {
     const file = e.target.files[0];
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = () => setProfileImg(reader.result);
+    reader.onload = () => setProfilePicture(reader.result);
     reader.readAsDataURL(file);
   }
 
@@ -26,18 +47,32 @@ export default function Settings() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  function handleSave() {
-    console.log("Saved:", formData, profileImg);
-    alert("Profile updated!");
+  async function handleSave() {
+    try {
+      await API.put(`/users/${user_id}`, {
+        username: formData.username,
+        profile_picture: profilePicture,
+      });
+
+      localStorage.setItem("username", formData.username);
+      localStorage.setItem("profile_picture", profilePicture || "");
+
+      setEditing(false);
+      alert("Profile updated!");
+    } catch (err) {
+      console.error(err);
+      alert("Failed to save");
+    }
   }
 
   return (
     <div className="settings-container">
+
       <nav className="sidebar">
         <div className="logo">
           <span className="big-c">C</span>ense
         </div>
-
+        <Link to="/HomePage" className="nav-btn">Home</Link>
         <Link to="/expenses" className="nav-btn">Expenses</Link>
         <Link to="/tracker" className="nav-btn">Tracker</Link>
         <Link to="/predictions" className="nav-btn">Predictions</Link>
@@ -46,72 +81,84 @@ export default function Settings() {
 
       <main className="main">
 
-        {/* ✅ BACK BUTTON THAT DOES NOT CHANGE LAYOUT */}
         <button className="back-btn-fixed" onClick={() => navigate(-1)}>
           ⬅
         </button>
 
-        <h1>Edit Profile</h1>
-        <p className="subtitle">
-          Information you display here will be displayed on your profile.
-        </p>
+        <aside className="side-links">
+          <Link to="/settings/account-management">Account management</Link>
+          <Link to="/settings/other-accounts">Other accounts</Link>
+          <Link to="/settings/privacy-data">Privacy and data</Link>
+        </aside>
+
+        <h1>Profile – {formData.username}</h1>
 
         <div className="profile-card">
-          <h2>Photo</h2>
 
-          <div className="photo-wrapper">
-            <img
-              src={profileImg || "/images/default-avatar.png"}
-              className="profile-placeholder"
-              alt="Profile"
-            />
+          {!editing && (
+            <div className="profile-view">
 
-            <label className="change-btn">
-              Change
-              <input type="file" hidden onChange={handleChangePhoto} />
-            </label>
-          </div>
+              <img
+                src={profilePicture || "/images/default-avatar.png"}
+                alt="Profile"
+                className="profile-placeholder"
+                style={{ width: "90px", height: "90px", borderRadius: "50%" }}
+              />
 
-          <div className="form-group">
-            <label>First Name</label>
-            <input
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleInputChange}
-            />
-          </div>
+              <h2 style={{ fontWeight: 700, marginTop: "10px" }}>
+                {formData.username}
+              </h2>
 
-          <div className="form-group">
-            <label>Surname</label>
-            <input
-              type="text"
-              name="surname"
-              value={formData.surname}
-              onChange={handleInputChange}
-            />
-          </div>
+              <button
+                className="save-btn"
+                onClick={() => setEditing(true)}
+                style={{ marginTop: "20px" }}
+              >
+                Edit Profile
+              </button>
+            </div>
+          )}
 
-          <div className="form-group">
-            <label>Username</label>
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleInputChange}
-            />
-          </div>
+          {editing && (
+            <div className="profile-edit">
 
-          <button className="save-btn" onClick={handleSave}>
-            Save Changes
-          </button>
+              <img
+                src={profilePicture || "/images/default-avatar.png"}
+                alt="Profile"
+                className="profile-placeholder"
+                style={{ width: "90px", height: "90px", borderRadius: "50%" }}
+              />
+
+              <label className="change-btn" style={{ marginTop: "10px" }}>
+                Change Photo
+                <input type="file" hidden onChange={handleChangePhoto} />
+              </label>
+
+              <div className="form-group" style={{ marginTop: "20px" }}>
+                <label>Username</label>
+                <input
+                  name="username"
+                  type="text"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <button className="save-btn" onClick={handleSave}>
+                Save Changes
+              </button>
+
+              <button
+                className="cancel-btn"
+                onClick={() => setEditing(false)}
+                style={{ marginTop: "8px" }}
+              >
+                Cancel
+              </button>
+            </div>
+          )}
+
         </div>
-
-<aside className="side-links">
-  <Link to="/settings/account-management">Account management</Link>
-  <Link to="/settings/other-accounts">Other accounts</Link>
-  <Link to="/settings/privacy-data">Privacy and data</Link>
-</aside>
       </main>
     </div>
   );

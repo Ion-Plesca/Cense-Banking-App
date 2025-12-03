@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "../styles/Expenses.css";
+import API from "../api";
 
 function Expenses() {
   const [expenses, setExpenses] = useState([]);
@@ -12,13 +12,28 @@ function Expenses() {
 
   const user_id = localStorage.getItem("user_id");
 
+  const formatDateTimeForInput = (value) => {
+    if (!value) return "";
+    const d = new Date(value);
+    if (isNaN(d.getTime())) return "";
+    const local = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
+    return local.toISOString().slice(0, 16);
+  };
+
+  const formatDateTimeDisplay = (value) => {
+    if (!value) return "";
+    const d = new Date(value);
+    if (isNaN(d.getTime())) return value;
+    return d.toLocaleString();
+  };
+
   useEffect(() => {
     fetchExpenses();
   }, []);
 
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/expenses/${user_id}`);
+      const res = await API.get(`/expenses/${user_id}`);
       setExpenses(res.data);
     } catch (err) {
       console.error(err);
@@ -26,21 +41,17 @@ function Expenses() {
   };
 
   const handleAddExpense = async () => {
-    if (!category || !note || !amount || !occurred) {
-      alert("Please fill all fields");
-      return;
-    }
-
-    const newExpense = {
-      user_id,
-      category,
-      note,
-      amount,
-      occurred,
-    };
+    if (!category || !note || !amount || !occurred) return alert("Please fill all fields");
 
     try {
-      await axios.post("http://localhost:5000/api/expenses", newExpense);
+      await API.post("/expenses", {
+        user_id,
+        category,
+        note,
+        amount,
+        occurred,
+      });
+
       clearForm();
       fetchExpenses();
     } catch (err) {
@@ -50,7 +61,7 @@ function Expenses() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/expenses/${id}`);
+      await API.delete(`/expenses/${id}`);
       fetchExpenses();
     } catch (err) {
       console.error(err);
@@ -58,17 +69,18 @@ function Expenses() {
   };
 
   const handleUpdate = async () => {
-    const updated = {
-      category,
-      note,
-      amount,
-      occurred,
-    };
+    if (!editingId) return;
 
     try {
-      await axios.put(`http://localhost:5000/api/expenses/${editingId}`, updated);
-      setEditingId(null);
+      await API.put(`/expenses/${editingId}`, {
+        category,
+        note,
+        amount,
+        occurred,
+      });
+
       clearForm();
+      setEditingId(null);
       fetchExpenses();
     } catch (err) {
       console.error(err);
@@ -79,7 +91,7 @@ function Expenses() {
     setCategory(expense.category);
     setNote(expense.note);
     setAmount(expense.amount);
-    setOccurred(expense.occurred);
+    setOccurred(formatDateTimeForInput(expense.occurred));
     setEditingId(expense.id);
   };
 
@@ -97,13 +109,15 @@ function Expenses() {
   return (
     <div className="main">
       <div className="page">
-
         <h1>Expenses</h1>
 
         <div className="card">
           <h2>{editingId ? "Update Expense" : "Add Expense"}</h2>
 
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
             <option value="">Select Category</option>
             <option value="Food">Food</option>
             <option value="Transport">Transport</option>
@@ -114,6 +128,7 @@ function Expenses() {
 
           <input
             type="text"
+            className="input-narrow"
             placeholder="Note"
             value={note}
             onChange={(e) => setNote(e.target.value)}
@@ -121,13 +136,15 @@ function Expenses() {
 
           <input
             type="number"
+            className="input-narrow"
             placeholder="Amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
 
           <input
-            type="date"
+            type="datetime-local"
+            className="input-narrow"
             value={occurred}
             onChange={(e) => setOccurred(e.target.value)}
           />
@@ -141,26 +158,33 @@ function Expenses() {
 
         <div className="expenses-container">
           {expenses.length === 0 ? (
-            <p>No expenses yet.</p>
+            <p className="no-expenses">No expenses yet.</p>
           ) : (
             expenses.map((exp) => (
               <div key={exp.id} className={categoryClass(exp.category)}>
-
                 <h3>{exp.note}</h3>
                 <p>Category: {exp.category}</p>
                 <p>Amount: €{exp.amount}</p>
-                <p>Date: {exp.occurred}</p>
+                <p>Date: {formatDateTimeDisplay(exp.occurred)}</p>
 
                 <div className="button-row">
-                  <button className="edit-btn" onClick={() => startEditing(exp)}>Edit</button>
-                  <button className="delete-btn" onClick={() => handleDelete(exp.id)}>Delete</button>
+                  <button
+                    className="edit-btn"
+                    onClick={() => startEditing(exp)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDelete(exp.id)}
+                  >
+                    Delete
+                  </button>
                 </div>
-
               </div>
             ))
           )}
         </div>
-
       </div>
     </div>
   );

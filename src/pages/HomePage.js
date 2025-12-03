@@ -1,8 +1,114 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import API from "../api";
 
-function HomePage() {
+function HomePage({ user }) {
+  // ────────────────────────────────
+  // REACT HOOKS MUST BE AT THE TOP
+  // ────────────────────────────────
+  const [expenses, setExpenses] = useState([]);
+  const [incomes, setIncomes] = useState([]);
+
+  const [expenseForm, setExpenseForm] = useState({
+    category: "",
+    note: "",
+    amount: "",
+    occurred: "",
+  });
+
+  const [incomeForm, setIncomeForm] = useState({
+    source: "",
+    amount: "",
+    occurred: "",
+  });
+
+  const [showIncomeForm, setShowIncomeForm] = useState(false);
+
+  // ────────────────────────────────
+  // FETCH FUNCTIONS
+  // ────────────────────────────────
+  const fetchExpenses = async () => {
+    try {
+      const res = await API.get(`/expenses/${user?.user_id}`);
+      setExpenses(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const fetchIncomes = async () => {
+    try {
+      const res = await API.get(`/incomes/${user?.user_id}`);
+      setIncomes(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    if (user?.user_id) {
+      fetchExpenses();
+      fetchIncomes();
+    }
+  }, [user]);
+
+  // ────────────────────────────────
+  // REDIRECT AFTER HOOKS ARE DECLARED
+  // ────────────────────────────────
+  if (!user?.user_id) {
+    return <Navigate to="/login" />;
+  }
+
+  // ────────────────────────────────
+  // ADD + DELETE LOGIC (unchanged)
+  // ────────────────────────────────
+
+  const handleAddExpense = async (e) => {
+    e.preventDefault();
+    try {
+      await API.post("/expenses", { user_id: user.user_id, ...expenseForm });
+      setExpenseForm({ category: "", note: "", amount: "", occurred: "" });
+      fetchExpenses();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDeleteExpense = async (id) => {
+    try {
+      await API.delete(`/expenses/${id}`);
+      fetchExpenses();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleAddIncome = async (e) => {
+    e.preventDefault();
+    try {
+      await API.post("/incomes", { user_id: user.user_id, ...incomeForm });
+      setIncomeForm({ source: "", amount: "", occurred: "" });
+      setShowIncomeForm(false);
+      fetchIncomes();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDeleteIncome = async (id) => {
+    try {
+      await API.delete(`/incomes/${id}`);
+      fetchIncomes();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // ────────────────────────────────
+  // UI LAYOUT (unchanged)
+  // ────────────────────────────────
+
   return (
     <div className="home-wrap">
       <div className="home-inner">
