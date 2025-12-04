@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/anton": "^5.2.7",
+    "@fontsource/bangers": "^5.2.8",
+    "@fontsource/luckiest-guy": "^5.2.8",
+    "@fontsource/permanent-marker": "^5.2.7",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",

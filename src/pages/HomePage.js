@@ -1,162 +1,72 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/HomePage.css";
 import { Link, Navigate } from "react-router-dom";
-import API from "../api";
+import backgroundImg from "../assets/background.jpg";
+import "@fontsource/bangers";
+import "@fontsource/luckiest-guy";
+import "@fontsource/permanent-marker";
+import "@fontsource/anton";
+
+
 
 function HomePage({ user }) {
-  // ────────────────────────────────
-  // REACT HOOKS MUST BE AT THE TOP
-  // ────────────────────────────────
-  const [expenses, setExpenses] = useState([]);
-  const [incomes, setIncomes] = useState([]);
-
-  const [expenseForm, setExpenseForm] = useState({
-    category: "",
-    note: "",
-    amount: "",
-    occurred: "",
-  });
-
-  const [incomeForm, setIncomeForm] = useState({
-    source: "",
-    amount: "",
-    occurred: "",
-  });
-
-  const [showIncomeForm, setShowIncomeForm] = useState(false);
-
-  // ────────────────────────────────
-  // FETCH FUNCTIONS
-  // ────────────────────────────────
-  const fetchExpenses = async () => {
-    try {
-      const res = await API.get(`/expenses/${user?.user_id}`);
-      setExpenses(res.data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const fetchIncomes = async () => {
-    try {
-      const res = await API.get(`/incomes/${user?.user_id}`);
-      setIncomes(res.data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  useEffect(() => {
-    if (user?.user_id) {
-      fetchExpenses();
-      fetchIncomes();
-    }
-  }, [user]);
-
-  // ────────────────────────────────
-  // REDIRECT AFTER HOOKS ARE DECLARED
-  // ────────────────────────────────
   if (!user?.user_id) {
     return <Navigate to="/login" />;
   }
 
-  // ────────────────────────────────
-  // ADD + DELETE LOGIC (unchanged)
-  // ────────────────────────────────
-
-  const handleAddExpense = async (e) => {
-    e.preventDefault();
-    try {
-      await API.post("/expenses", { user_id: user.user_id, ...expenseForm });
-      setExpenseForm({ category: "", note: "", amount: "", occurred: "" });
-      fetchExpenses();
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const handleDeleteExpense = async (id) => {
-    try {
-      await API.delete(`/expenses/${id}`);
-      fetchExpenses();
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const handleAddIncome = async (e) => {
-    e.preventDefault();
-    try {
-      await API.post("/incomes", { user_id: user.user_id, ...incomeForm });
-      setIncomeForm({ source: "", amount: "", occurred: "" });
-      setShowIncomeForm(false);
-      fetchIncomes();
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const handleDeleteIncome = async (id) => {
-    try {
-      await API.delete(`/incomes/${id}`);
-      fetchIncomes();
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  // ────────────────────────────────
-  // UI LAYOUT (unchanged)
-  // ────────────────────────────────
-
   return (
-    <div className="home-wrap">
-      <div className="home-inner">
+    <div
+      className="homepage"
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+      }}
+    >
+      <div className="homepage-overlay"></div>
 
-        <div className="left">
-          <h3 className="heading">A bit About Cense</h3>
+      <div className="homepage-content">
+        <div className="hero-section">
+          <h1 className="hero-title">Welcome to CENSE</h1>
+          <p className="hero-subtitle">Smart Budgeting for Smart Students</p>
+        </div>
 
-          <div className="about-box">
-            <p>Cense is a <strong>student budgeting</strong> application that combines</p>
-            <p className="green">FINANCIAL</p>
-            <p className="green">SUGGESTIONS</p>
-            <p className="blue">Predictions</p>
-            <p className="red">Trackers</p>
-            <p className="yellow">Expenses</p>
-            <p>all into one application.</p>
+        <div className="panel-grid">
+          <div className="panel about-panel">
+            <h2 className="panel-title">About Cense</h2>
+            <p className="panel-text">
+              Cense is a <strong>student budgeting</strong> application that combines:
+            </p>
+
+            <ul className="feature-list">
+              <li className="f-red">Trackers</li>
+              <li className="f-green">Predicitons</li>
+              <li className="f-blue">Suggestions</li>
+              <li className="f-yellow">Expense Management</li>
+            </ul>
+
+            <p className="panel-text">All in one easy-to-use platform.</p>
+          </div>
+
+          <div className="panel testimonials-panel">
+            <h2 className="panel-title">Testimonials</h2>
+
+            <div className="testimonial">
+              <p className="quote">"Lifesaver"</p>
+              <p className="t-name">Jessie — Commuting Student</p>
+            </div>
+
+            <div className="testimonial">
+              <p className="quote">"Amazing"</p>
+              <p className="t-name">Kelly — Renting Student</p>
+            </div>
+
+            <div className="testimonial">
+              <p className="quote">"Informative"</p>
+              <p className="t-name">Daniel — Mature Student</p>
+            </div>
           </div>
         </div>
 
-        <div className="divider"></div>
-
-        <div className="right">
-          <h3 className="heading">Testimonials</h3>
-
-          <div className="t-card">
-            <p className="quote">"Lifesaver"</p>
-            <div className="pf blue"></div>
-            <p className="name">Jessie</p>
-            <p className="role">Commuting Student</p>
-          </div>
-
-          <div className="t-card">
-            <p className="quote">"Amazing"</p>
-            <div className="pf yellow"></div>
-            <p className="name">Kelly</p>
-            <p className="role">Renting Student</p>
-          </div>
-
-          <div className="t-card">
-            <p className="quote">"Informative"</p>
-            <div className="pf purple"></div>
-            <p className="name">Daniel</p>
-            <p className="role">Mature Student</p>
-          </div>
-        </div>
-
-        <Link to="/settings" className="gear-link">
-          <div className="gear">⚙️</div>
-        </Link>
+        <Link to="/settings" className="settings-fab">⚙️</Link>
       </div>
     </div>
   );

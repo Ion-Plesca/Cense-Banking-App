@@ -9,25 +9,19 @@
   box-sizing: border-box;
 }
 
+/* LOGO IMAGE */
+.nav-logo-img {
+  height: 73px;       /* adjust size */
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 4px;
 }
 
-.logo-c {
-  font-size: 40px;
-  color: #e5e100;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.logo-ense {
-  font-size: 22px;
-  font-weight: 700;
-  color: #e5e100;
-  line-height: 1;
-}
 
 .nav-links {
   display: flex;

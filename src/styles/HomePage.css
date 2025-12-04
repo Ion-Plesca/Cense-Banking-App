@@ -1,133 +1,161 @@
-.home-wrap {
-  background: #001a66;
+/* MAIN BACKGROUND */
+.homepage {
+  position: relative;
   min-height: calc(100vh - 70px);
   width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  align-items: center;
 }
 
-.home-inner {
+/* Light overlay */
+.homepage-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Main centered layout */
+.homepage-content {
+  position: relative;
   width: 100%;
   max-width: 1100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 0 20px;
-  box-sizing: border-box;
+  padding: 40px;
+  text-align: center;
+  color: white;
 }
 
-.left,
-.right {
+/* HERO */
+.hero-title {
+  font-size: 42px;
+  font-weight: 900;
+  color: #ffdd33;
+  text-shadow: 3px 3px 0px black;
+  margin-bottom: 5px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.panel-grid {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+/* PANELS */
+.panel {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 25px 30px;
   width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  min-width: 320px;
+  border-radius: 14px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.25);
 }
 
-.heading {
-  color: #ffea00;
+/* Panel Titles */
+.panel-title {
   text-align: center;
-  font-weight: 700;
-  font-size: 22px;
-  text-decoration: underline;
+  color: #0033aa;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 15px;
 }
-
-.about-box {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
+/* Panel Text */
+.panel-text {
   font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
   color: black;
-  text-align: center;
 }
 
-.green {
-  color: #2ecc71;
+/* List */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.feature-list li {
+  font-size: 18px;
   font-weight: 700;
+  margin: 6px 0;
 }
 
-.blue {
-  color: #3498db;
-  font-weight: 700;
-}
+.f-green { color: #2ecc71; }
+.f-blue { color: #3498db; }
+.f-red { color: #e74c3c; }
+.f-yellow { color: #f1c40f; }
 
-.red {
-  color: #e74c3c;
-  font-weight: 700;
-}
-
-.yellow {
-  color: #f1c40f;
-  font-weight: 700;
-}
-
-.divider {
-  width: 3px;
-  background: #ffee00;
-  border-radius: 3px;
-  min-height: 450px;
-  align-self: center;
-}
-
-.right {
-  gap: 20px;
-}
-
-.t-card {
-  background: white;
-  color: black;
-  padding: 18px 20px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+/* Testimonials */
+.testimonial {
+  background: #fafafa;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 12px 0;
 }
 
 .quote {
   font-size: 18px;
-  font-weight: 700;
   font-style: italic;
+  font-weight: 700;
+  color: #333;
 }
 
-.pf {
-  width: 40px;
-  height: 40px;
+.t-name {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #666;
+}
+
+/* Settings Floating Button */
+.settings-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 36px;
+  text-decoration: none;
+  color: white;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  margin-top: 8px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+}
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Bangers", sans-serif;   /* Marvel-style font */
+  font-size: 32px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px black;       /* Comic outline */
 }
 
-.blue {
-  background: #3498db;
-}
+/* Individual superhero colors */
+.f-green { color: #39ff14; }
+.f-blue { color: #00aaff; }
+.f-red { color: #ff3131; }
+.f-yellow { color: #ffe600; }
 
-.yellow {
-  background: #f1c40f;
-}
-
-.purple {
-  background: #9b59b6;
-}
-
-.name {
-  margin-top: 6px;
+/* Add comic-like spacing */
+.feature-list li {
+  margin-bottom: 10px;
   font-weight: 700;
 }
 
-.role {
-  font-size: 12px;
-  color: gray;
-}
-
-.gear-link {
-  text-decoration: none;
-}
-
-.gear {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 32px;
-  cursor: pointer;
-}
