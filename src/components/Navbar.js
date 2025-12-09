@@ -1,29 +1,62 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Navbar.css"; // you will create this
+import "../styles/Navbar.css";
+
+// ✅ Import your logo
+import logo from "../assets/logo.png";
 
 function Navbar() {
+  const username = localStorage.getItem("username");
+  const profilePicture = localStorage.getItem("profile_picture");
+
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.href = "/login";
+  };
+  const getProfilePictureSrc = () => {
+    if (!profilePicture) return null;
+
+    if (profilePicture.startsWith("http")) return profilePicture;
+
+    return `http://localhost:5000${profilePicture}`;
+  };
+
   return (
     <nav className="nav-container">
-      <button className="menu-icon">
-        ☰
-      </button>
 
-      <div className="nav-logo">
-        <span className="logo-c">C</span>
-        <span className="logo-ense">ense</span>
-      </div>
+      {/* LOGO IMAGE */}
+      <Link to="/homepage" className="nav-logo">
+        <img src={logo} alt="Cense Logo" className="nav-logo-img" />
+      </Link>
 
+      {/* LINKS */}
       <div className="nav-links">
+        <Link to="/homepage" className="nav-btn">Home</Link>
         <Link to="/tracker" className="nav-btn">Tracker</Link>
         <Link to="/predictions" className="nav-btn">Predictions</Link>
         <Link to="/suggestions" className="nav-btn">Suggestions</Link>
-        <Link to="/expenses" className="nav-btn ">Expenses</Link>
+        <Link to="/expenses" className="nav-btn">Expenses</Link>
         <Link to="/settings" className="nav-btn">Settings</Link>
       </div>
 
+      {/* PROFILE + LOGOUT */}
       <div className="nav-profile">
-        <div className="profile-circle"></div>
+          {profilePicture ? (
+            <img
+              src={getProfilePictureSrc()}
+              alt="avatar"
+              className="nav-avatar"
+            />
+          ) : (
+            <div className="profile-circle"></div>
+          )}
+
+        <span className="nav-username">{username || ""}</span>
+
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
+
       </div>
     </nav>
   );

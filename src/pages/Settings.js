@@ -34,36 +34,58 @@ export default function Settings() {
     loadUser();
   }, [user_id]);
 
+    const getProfilePictureSrc = () => {
+    if (!profilePicture) {
+      return "/images/default-avatar.png";
+    }
+
+    if (profilePicture instanceof File) {
+      return URL.createObjectURL(profilePicture);
+    }
+
+    const backendUrl = "http://localhost:5000";
+
+    if (profilePicture.startsWith("http")) {
+      return profilePicture;
+    }
+
+    return backendUrl + profilePicture;
+  };
+
   function handleChangePhoto(e) {
     const file = e.target.files[0];
     if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => setProfilePicture(reader.result);
-    reader.readAsDataURL(file);
+    setProfilePicture(file);
   }
 
   function handleInputChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  async function handleSave() {
-    try {
-      await API.put(`/users/${user_id}`, {
-        username: formData.username,
-        profile_picture: profilePicture,
-      });
+async function handleSave() {
+  try {
+    const form = new FormData();
+    form.append("username", formData.username);
 
-      localStorage.setItem("username", formData.username);
-      localStorage.setItem("profile_picture", profilePicture || "");
-
-      setEditing(false);
-      alert("Profile updated!");
-    } catch (err) {
-      console.error(err);
-      alert("Failed to save");
+    if (profilePicture instanceof File) {
+      form.append("profile_picture", profilePicture);
     }
+
+    const res = await API.put(`/settings/users/${user_id}`, form, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+
+    localStorage.setItem("username", res.data.username);
+    localStorage.setItem("profile_picture", res.data.profile_picture || "");
+
+    setEditing(false);
+    alert("Profile updated!");
+  } catch (err) {
+    console.error(err);
+    alert("Failed to save");
   }
+}
+
 
   return (
     <div className="settings-container">
@@ -98,12 +120,12 @@ export default function Settings() {
           {!editing && (
             <div className="profile-view">
 
-              <img
-                src={profilePicture || "/images/default-avatar.png"}
-                alt="Profile"
-                className="profile-placeholder"
-                style={{ width: "90px", height: "90px", borderRadius: "50%" }}
-              />
+                <img
+                  src={getProfilePictureSrc()}
+                  alt="Profile"
+                  className="profile-placeholder"
+                  style={{ width: "90px", height: "90px", borderRadius: "50%" }}
+                />
 
               <h2 style={{ fontWeight: 700, marginTop: "10px" }}>
                 {formData.username}
@@ -122,12 +144,12 @@ export default function Settings() {
           {editing && (
             <div className="profile-edit">
 
-              <img
-                src={profilePicture || "/images/default-avatar.png"}
-                alt="Profile"
-                className="profile-placeholder"
-                style={{ width: "90px", height: "90px", borderRadius: "50%" }}
-              />
+                <img
+                  src={getProfilePictureSrc()}
+                  alt="Profile"
+                  className="profile-placeholder"
+                  style={{ width: "90px", height: "90px", borderRadius: "50%" }}
+                />
 
               <label className="change-btn" style={{ marginTop: "10px" }}>
                 Change Photo
