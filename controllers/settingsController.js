@@ -23,15 +23,31 @@ export const addSettings = async(req, res) => {
     }
 };
 
-export const updateSettings = async(req, res) => {
-    const {id} = req.params;
-    const {currency, default_period, notifications_enabled, updated_at} = req.body;
-    try{
-        await pool.query("UPDATE user_settings SET currency = $1, default_period = $2, notifications_enabled = $3, updated_at = NOW() WHERE id = $4)",
-            [user_id, currency, default_period, notifications_enabled, updated_at]
-        );
-    } catch(err){
-        console.log(err);
-        res.status(500).json({message: "Error updating settings"});
+export async function updateSettings(req, res) {
+  try {
+    const user_id = req.params.id;
+    const { username } = req.body;
+
+    let profilePicUrl = null;
+
+    if (req.file) {
+      profilePicUrl = `/uploads/${req.file.filename}`;
     }
-};
+
+    await pool.query(
+      "UPDATE users SET username = $1, profile_picture = $2 WHERE user_id = $3",
+      [username, profilePicUrl, user_id]
+    );
+
+    return res.json({
+      username,
+      profile_picture: profilePicUrl,
+      message: "Profile updated",
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to update settings" });
+  }
+}
+
