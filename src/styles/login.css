@@ -3,11 +3,27 @@
 .page-container {
   /* The login background has been moved to `public/styles/login.css`.
      Keep this lightweight file to avoid webpack resolving /images paths from `src/`. */
+
   position: relative; /* create stacking context for overlay */
   overflow: hidden;
+
+  /* Ensure background fills the viewport edge-to-edge */
+  width: 100%;
+  height: 100%;
   min-height: 100vh;
+
   box-sizing: border-box;
+
+  /* IMPORTANT:
+     Do NOT add left/right padding here — it causes gray side gutters */
+  padding: 0;
+  margin-top: 13vh; /*eliminate grey guttuers*/
+  padding-top: 24vh;
+  padding-bottom: 6vh;
+  padding-left: 0;
+  padding-right: 0;
 }
+
 
 /* subtle dark overlay so text on top of the image remains readable */
 .page-container::before {
@@ -32,34 +48,38 @@
 
 /* Small global reset for auth pages so the background touches the very top */
 html, body, #root {
+  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  background: #000; /* fallback behind background image */
+  box-sizing: border-box;
 }
 
 /* Convenience wrapper when you only want the login to have the background.
    Wrap the login route content with a `.login-page` element and the
    `.page-container` rules above will make the background fill the viewport. */
-.login-page, .login-page .page-container {
+.login-page {
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* move content lower on the page so it fits without scrolling on common viewports */
-  justify-content: flex-start;
-  /* give a responsive top padding tuned for desktop 100% zoom - increased so details sit lower */
-  padding-top: 14vh;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 6vh;
-  box-sizing: border-box;
-  /* override global page-container margins/padding so login styling wins */
-  margin-top: 0 !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center ONLY the login content, not the background */
+.login-page
+.page-container h2,
+.page-container .auth-form,
+.page-container p {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* Reduce the top padding on small screens so the form doesn't get pushed off-screen */
 @media (max-width: 480px) {
-  .login-page, .login-page .page-container {
+  .page-container {
     padding-top: 6vh;
     padding-bottom: 4vh;
   }
@@ -67,7 +87,7 @@ html, body, #root {
 
 /* On very tall or desktop screens we can push it a bit more downward for visual balance */
 @media (min-height: 900px) {
-  .login-page, .login-page .page-container {
+  .page-container {
     padding-top: 14vh;
   }
 }
@@ -87,6 +107,15 @@ html, body, #root {
 .login-page .logo-img {
   height: 30px;
 }
+.top-stripe-text {
+  font-family: 'Bangers', cursive;  /* NEW FONT */
+  font-size: 96px;            /*BIGGER TEXT */
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+
 /* NOTE
    The login background and stripe styles are served from `public/styles/login.css`.
    This file used to contain the same rules but importing an image with a leading
@@ -96,3 +125,4 @@ html, body, #root {
 
 /* Minimal reset to avoid unused CSS imports causing compile errors. */
 /* No styles here; see public/styles/login.css for login-specific styles. */
+/* Text */

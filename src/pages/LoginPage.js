@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import API from "../api";
 import { Link } from "react-router-dom";
+import "../styles/login.css";
+import "@fontsource/bangers";
+
 
 function LoginPage({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -28,7 +31,9 @@ function LoginPage({ onLogin }) {
   return (
     <div className="login-page">
       <img src="/images/logo.png" alt="logo" className="top-stripe-logo" />
-      <div className="top-stripe-text">Welcome to Cense</div>
+      <div className="top-stripe-text bangers-font">Welcome to Cense</div>
+      
+
 
       <div className="page-container">
         <h2>Login</h2>
