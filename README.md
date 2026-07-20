@@ -8,7 +8,7 @@ A React-based banking application featuring secure authentication, real-time tra
 Local session management with secure login flows. User state persists across navigation via context/Redux, enabling role-based access control and transaction authorization.
 
 ### Transaction Engine
-Implements atomic transaction handling with confirmation workflows. Transfers between accounts trigger real-time balance updates with transactional consistency—preventing race conditions and overdrafts through validation logic.
+Implements atomic transaction handling with confirmation workflows. Transfers between accounts trigger real-time balance updates with transactional consistency-preventing race conditions and overdrafts through validation logic.
 
 ### Real-Time Data Synchronization
 Components subscribe to account changes and transaction streams, ensuring UI reflects current balances without manual refresh. Handles concurrent operations gracefully with optimistic updates and rollback mechanisms.
